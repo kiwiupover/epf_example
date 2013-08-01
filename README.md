@@ -9,7 +9,7 @@ This is a conversion of [Dan Gebhardt](https://github.com/dgeb) [Ember Data exam
 
 The app itself is a simple, single-page contact manager styled with Twitter Bootstrap.
 
-![Screen shot](https://raw.github.com/kiwiupover/epf_example/epf/doc/EPFExample.png)
+![Screen shot](https://raw.github.com/kiwiupover/epf_example/master/doc/EPFExample.png)
 
 ## Installation
 
