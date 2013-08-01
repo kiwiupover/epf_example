@@ -19,6 +19,9 @@ gem 'ember-rails', github: 'emberjs/ember-rails'
 gem 'ember-source', '1.0.0.rc6'
 gem 'handlebars-source', '1.0.0.rc4'
 
+gem 'epf-rails'
+gem 'epf-source'
+
 group :test, :development do
   gem 'minitest'
   gem 'minitest-rails'

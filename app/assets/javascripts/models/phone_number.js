@@ -1,4 +1,4 @@
-App.PhoneNumber = DS.Model.extend({
-  number:  DS.attr('string'),
-  contact: DS.belongsTo('App.Contact')
+App.PhoneNumber.reopen({
+  number:  Ep.attr('string'),
+  contact: Ep.belongsTo(App.Contact)
 });

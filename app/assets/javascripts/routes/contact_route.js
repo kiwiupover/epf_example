@@ -1,4 +1,5 @@
 App.ContactRoute = Ember.Route.extend({
+  
   setupController: function(controller, model) {
     this._super.apply(this, arguments);
 

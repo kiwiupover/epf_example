@@ -72,6 +72,10 @@ GEM
       ember-source
     ember-source (1.0.0.rc6)
       handlebars-source (= 1.0.0.rc4)
+    epf-rails (1.1.0)
+      epf-source
+      rails
+    epf-source (0.1.1)
     erubis (2.7.0)
     eventmachine (1.0.1)
     execjs (1.4.0)
@@ -195,6 +199,8 @@ DEPENDENCIES
   capybara
   ember-rails!
   ember-source (= 1.0.0.rc6)
+  epf-rails
+  epf-source
   handlebars-source (= 1.0.0.rc4)
   jquery-rails
   konacha

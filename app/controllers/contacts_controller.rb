@@ -12,7 +12,10 @@ class ContactsController < ApplicationController
 
   # POST /contacts.json
   def create
+    client_id = params[:contact][:client_id]
     contact = Contact.new
+    contact.client_id = client_id
+
     if update_contact(contact)
       render json: contact, status: :created
     else

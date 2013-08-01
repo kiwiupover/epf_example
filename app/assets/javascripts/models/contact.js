@@ -1,9 +1,11 @@
-App.Contact  = DS.Model.extend({
-  firstName:    DS.attr('string'),
-  lastName:     DS.attr('string'),
-  email:        DS.attr('string'),
-  notes:        DS.attr('string'),
-  phoneNumbers: DS.hasMany('App.PhoneNumber'),
+App.PhoneNumber =  Ep.Model.extend();
+
+App.Contact  = Ep.Model.extend({
+  firstName:    Ep.attr('string'),
+  lastName:     Ep.attr('string'),
+  email:        Ep.attr('string'),
+  notes:        Ep.attr('string'),
+  phoneNumbers: Ep.hasMany(App.PhoneNumber),
 
   fullName: function() {
     var firstName = this.get('firstName'),

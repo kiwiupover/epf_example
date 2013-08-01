@@ -3,7 +3,8 @@ class ContactSerializer < ActiveModel::Serializer
              :first_name,
              :last_name,
              :email,
-             :notes
+             :notes,
+             :client_id
 
   has_many :phone_numbers, embed: :objects
 end

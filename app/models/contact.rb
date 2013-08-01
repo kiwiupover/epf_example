@@ -3,6 +3,8 @@ class Contact < ActiveRecord::Base
   validates :last_name, :presence => true
   has_many :phone_numbers, :dependent => :destroy
 
+  attr_accessor :client_id
+  
   def full_name
     self.first_name + ' ' + self.last_name
   end
