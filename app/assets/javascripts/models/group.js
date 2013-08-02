@@ -1,5 +1,4 @@
-// for more details see: http://emberjs.com/guides/models/defining-models/
-
-EmberDataExample.Group = DS.Model.extend({
-  name: DS.attr('string')
+EmberDataExample.Group = Ep.Model.extend({
+  name: Ep.attr('string'),
+  contacts: Ep.hasMany(App.Contact)
 });
