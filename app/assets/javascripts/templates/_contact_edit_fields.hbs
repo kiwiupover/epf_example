@@ -22,6 +22,19 @@
     {{view Ember.TextArea valueBinding="notes" id="notes" placeholder="Notes"}}
   </div>
 </div>
+{{#unless controller.newGroup}}
+<div class="control-group">
+  <label class="control-label" for="notes">Group</label>
+  <div class="controls">
+    {{view Ember.Select viewName="select"
+                    contentBinding="groups"
+                    optionLabelPath="content.name"
+                    optionValuePath="content.id"
+                    prompt="Pick a group:"
+                    selectionBinding="group"}}
+  </div>
+</div>
+{{/unless}}
 <div class="control-group">
   <label class="control-label" for="phone">Phone</label>
   <div class="controls">

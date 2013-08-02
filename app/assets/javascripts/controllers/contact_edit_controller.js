@@ -1,11 +1,13 @@
 App.ContactEditController = Em.ObjectController.extend({
-  needs: ['contact'],
+  needs: ['groups', 'contact'],
+
+  groups: Ember.computed.alias('controllers.groups'),
 
   startEditing: function() {
     // add the contact and its associated phone numbers to a session
     var contact =       this.get('model');
     var childSession =  this.session.newSession();
-    var childContact =  this.session.add(contact);
+    var childContact =  childSession.add(contact);
 
     contact.get('phoneNumbers').forEach(function(phoneNumber) {
       childContact.session.add(phoneNumber);

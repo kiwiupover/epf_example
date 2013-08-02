@@ -1,0 +1,11 @@
+<div class="span2">
+  <div class="well sidebar-nav">
+    <ul class="nav nav-list">
+      <li class="nav-header">Groups</li>
+      {{#each}}
+        <li>{{#linkTo 'group' this}}{{name}}{{/linkTo}}</li>
+      {{/each}}
+    </ul>
+  </div>
+</div>
+{{outlet}}

@@ -20,6 +20,7 @@ Assuming Ruby 1.9.2+ with bundler gem installed:
     $ rails s
 
 ## Test
+#### Known issue some of the test are not working. I will fix this soon using Ember Testing and Karma.
 
 ### Rails
 

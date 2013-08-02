@@ -1,0 +1,22 @@
+<div class="span9">
+  <form {{action save on="submit"}} class="form-horizontal">
+    <legend>Create Group</legend>
+      <div class="control-group">
+        <label class="control-label" for="firstName">Group Name</label>
+        <div class="controls">
+          {{input value=name placeholder="Enter the name of your group" required="true" type='text'}}
+        </div>
+      </div>
+      <hr>
+      <h5>Add your first contact</h5>
+      {{#each contacts}}
+        {{partial "contact_edit_fields"}}
+      {{/each}}
+      
+    
+    <div class="form-actions">
+      {{submitButton "Create"}}
+      <button class="btn" {{action cancel}}>Cancel</button>
+    </div>
+  </form>
+</div>

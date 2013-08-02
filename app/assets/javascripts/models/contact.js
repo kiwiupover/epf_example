@@ -1,10 +1,12 @@
-App.PhoneNumber =  Ep.Model.extend();
+App.Group       = Ep.Model.extend();
+App.PhoneNumber = Ep.Model.extend();
 
 App.Contact  = Ep.Model.extend({
   firstName:    Ep.attr('string'),
   lastName:     Ep.attr('string'),
   email:        Ep.attr('string'),
   notes:        Ep.attr('string'),
+  group:        Ep.belongsTo(App.Group),
   phoneNumbers: Ep.hasMany(App.PhoneNumber),
 
   fullName: function() {
