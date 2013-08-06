@@ -40,4 +40,14 @@
       }
     }
   }
+  .sidebar-nav {
+    a.active {
+      background:#0088cc;
+      color: white
+    }
+    .btn {
+      margin: 20px 15px 0;
+    }
+  }
 }
+

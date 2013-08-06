@@ -1,0 +1,14 @@
+<div class="span2">
+  <div class="well sidebar-nav">
+    <ul class="nav nav-list">
+      <li class="nav-header">Groups contacts</li>
+      {{#each contacts}}
+        <li>{{#linkTo 'group.contact' this}}{{fullName}}{{/linkTo}}</li>
+      {{/each}}
+    </ul>
+    <a href="#" {{action 'destroyRecord' this}} class='btn btn-mini'>Remove Group</a>    
+  </div>
+</div>
+<div class="span7">
+  {{outlet}}
+</div>

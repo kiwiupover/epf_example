@@ -22,13 +22,13 @@
   {{/if}}
   {{#if group}}
     <dt>Group:</dt>
-    <dd>{{#linkTo 'group' group}}{{group.name}}{{/linkTo}}</dd>
+    <dd>{{group.name}}</dd>
   {{/if}}
 </dl>
 
 
 <div class="well well-small">
-  <a class="btn btn" {{action startEditing}}>Edit</a>
-  <a class="btn btn-danger" {{action destroyRecord}}>Remove</a>
+  <a class="btn btn" {{action 'editContact' model}}>Edit</a>
+  <a class="btn btn-danger" {{action 'destroyContact' model}}>Remove</a>
 </div>
 {{/if}}

@@ -15,8 +15,11 @@ App.ContactController = Em.ObjectController.extend({
 
   destroyRecord: function() {
     if (window.confirm("Are you sure you want to delete this contact?")) {
-      this.session.deleteModel(this.get('model'));
-      this.session.flush();
+      var contact = this.get('model');
+      contact.set('group', null);
+      
+      contact.session.deleteModel(this.get('model'));
+      contact.session.flush();
 
       // return to the main contacts listing page
       this.get('target.router').transitionTo('contacts.index');

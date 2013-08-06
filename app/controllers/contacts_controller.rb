@@ -47,6 +47,7 @@ private
                                     :last_name,
                                     :email,
                                     :notes,
+                                    :group_id,
                                     phone_numbers: [:id, :number])
   end
 

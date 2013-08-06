@@ -1,5 +1,5 @@
-App.Group =  Ep.Model.extend();
-App.PhoneNumber =  Ep.Model.extend();
+App.Group       = Ep.Model.extend();
+App.PhoneNumber = Ep.Model.extend();
 
 App.Contact  = Ep.Model.extend({
   firstName:    Ep.attr('string'),
