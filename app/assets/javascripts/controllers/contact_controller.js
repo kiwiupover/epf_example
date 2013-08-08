@@ -1,6 +1,8 @@
 App.ContactController = Em.ObjectController.extend({
   isEditing: false,
-  needs: ['contactEdit'],
+  needs: ['groups', 'contactEdit'],
+
+  groups: Ember.computed.alias('controllers.groups'),
 
   startEditing: function() {
     var contactEditController = this.get('controllers.contactEdit');
@@ -17,7 +19,7 @@ App.ContactController = Em.ObjectController.extend({
     if (window.confirm("Are you sure you want to delete this contact?")) {
       var contact = this.get('model');
       contact.set('group', null);
-      
+
       contact.session.deleteModel(this.get('model'));
       contact.session.flush();
 

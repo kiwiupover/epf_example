@@ -1,24 +1,21 @@
 App.GroupsNewController = Ember.ObjectController.extend({
   needs: ['groups', 'contactsNew'],
+  newContact: null,
   
-  startEditing: function(){
-    // var newContact = this.session.create('contact');
-    // this.get('contacts').pushObject(newContact);
+  newGroup: false,
+
+  startEditing: function() {
+    var controller = this;
+    var childSession =  this.session.newSession();
+    this.newContact = this.session.create('contact');
+    return controller.get('contacts').pushObject(this.newContact);
   },
 
   save: function() {
     var controller = this;
-    var childSession =  this.session.newSession();
-    var newContact = childSession.create('contact');
-   
-    newContact.setProperties({
-      firstName: this.get('firstName'),
-      lastName: this.get('lastName'),
-      group: this.get('model')
-    });
 
-    return childSession.flush().then(function(models) {
-      newGroup = controller.get('content');
+    this.newContact.session.flush().then(function(models) {
+      var newGroup = controller.get('model');
       controller.get('controllers.groups').content.pushObject(newGroup);
       controller.transitionToRoute('group', newGroup);
     }, function(response){
@@ -28,7 +25,7 @@ App.GroupsNewController = Ember.ObjectController.extend({
   },
 
   addPhoneNumber: function() {
-    this.get('controllers.contactsNew').send('addPhoneNumber');
+    this.newContact.session.add(App.PhoneNumber.create({contact: this.newContact}))
   }
 
 });

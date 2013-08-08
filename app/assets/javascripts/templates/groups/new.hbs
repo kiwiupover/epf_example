@@ -9,7 +9,10 @@
       </div>
       <hr>
       <h5>Add your first contact</h5>
-      {{partial "contact_edit_fields"}}
+      {{#each contacts}}
+        {{partial "contact_edit_fields"}}
+      {{/each}}
+      
     
     <div class="form-actions">
       {{submitButton "Create"}}

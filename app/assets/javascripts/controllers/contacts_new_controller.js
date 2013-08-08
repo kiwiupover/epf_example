@@ -1,6 +1,8 @@
 App.ContactsNewController = Em.ObjectController.extend({
-  needs: 'contacts',
+  needs: ['groups', 'contacts'],
 
+  groups: Ember.computed.alias('controllers.groups'),
+  
   startEditing: function() {
     this.set('isEditing', true);
   },
