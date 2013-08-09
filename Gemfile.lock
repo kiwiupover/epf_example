@@ -120,6 +120,7 @@ GEM
       minitest-rails (~> 0.5)
     multi_json (1.7.7)
     nokogiri (1.5.6)
+    pg (0.15.1)
     poltergeist (1.1.0)
       capybara (~> 2.0, >= 2.0.1)
       faye-websocket (~> 0.4, >= 0.4.4)
@@ -207,6 +208,7 @@ DEPENDENCIES
   minitest
   minitest-rails
   minitest-rails-capybara
+  pg
   poltergeist
   rails (= 3.2.9)
   sass-rails

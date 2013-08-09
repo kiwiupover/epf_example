@@ -1,7 +1,6 @@
 source 'http://rubygems.org'
 
 gem 'rails', '3.2.9'
-gem 'sqlite3'
 gem 'strong_parameters'
 
 # Gems used only for assets and not required
@@ -22,7 +21,12 @@ gem 'handlebars-source', '1.0.0.rc4'
 gem 'epf-rails'
 gem 'epf-source'
 
+group :production do
+  gem 'pg'
+end
+
 group :test, :development do
+  gem 'sqlite3'
   gem 'minitest'
   gem 'minitest-rails'
   gem 'minitest-rails-capybara'
