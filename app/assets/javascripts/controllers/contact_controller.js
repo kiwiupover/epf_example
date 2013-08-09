@@ -5,9 +5,16 @@ App.ContactController = Em.ObjectController.extend({
   groups: Ember.computed.alias('controllers.groups'),
 
   startEditing: function() {
+    var controller = this;
     var contactEditController = this.get('controllers.contactEdit');
+
     contactEditController.set('model', this.get('model'));
     contactEditController.startEditing();
+
+    this.session.query('group').then( function(model){
+      controller.get('controllers.groups').set('content', model);
+    });
+
     this.set('isEditing', true);
   },
 
@@ -24,7 +31,7 @@ App.ContactController = Em.ObjectController.extend({
       contact.session.flush();
 
       // return to the main contacts listing page
-      this.get('target.router').transitionTo('contacts.index');
+      this.get('target.router').transitionToRoute('contacts.index');
     }
   }
 });

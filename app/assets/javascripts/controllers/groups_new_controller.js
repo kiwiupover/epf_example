@@ -1,8 +1,8 @@
 App.GroupsNewController = Ember.ObjectController.extend({
   needs: ['groups', 'contactsNew'],
-  newContact: null,
   
-  newGroup: false,
+  newContact: null,
+  newGroup: true,
 
   startEditing: function() {
     var controller = this;
@@ -26,6 +26,10 @@ App.GroupsNewController = Ember.ObjectController.extend({
 
   addPhoneNumber: function() {
     this.newContact.session.add(App.PhoneNumber.create({contact: this.newContact}))
+  },
+
+  removePhoneNumber: function(phoneNumber) {
+    this.newContact.session.deleteModel(phoneNumber);
   }
 
 });
