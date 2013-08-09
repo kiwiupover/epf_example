@@ -31,7 +31,7 @@ App.ContactController = Em.ObjectController.extend({
       contact.session.flush();
 
       // return to the main contacts listing page
-      this.get('target.router').transitionToRoute('contacts.index');
+      this.transitionToRoute('contacts.index');
     }
   }
 });
