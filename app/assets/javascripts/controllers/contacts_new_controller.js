@@ -21,9 +21,9 @@ App.ContactsNewController = Em.ObjectController.extend({
       newContact = controller.get('content');
       controller.get('controllers.contacts').content.pushObject(newContact);
       controller.transitionToRoute("contact", newContact);
-    }, function(response){
+    }, function(exception){
       // TODO add better error message
-      alert(response);
+      alert(exception);
     });
   },
 
