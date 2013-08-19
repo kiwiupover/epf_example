@@ -18,9 +18,9 @@ App.GroupsNewController = Ember.ObjectController.extend({
       var newGroup = controller.get('model');
       controller.get('controllers.groups').content.pushObject(newGroup);
       controller.transitionToRoute('group', newGroup);
-    }, function(response){
+    }, function(exception){
       // TODO add better error message
-      alert(response);
+      alert(exception);
     });
   },
 
