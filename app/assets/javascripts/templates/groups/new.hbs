@@ -1,10 +1,11 @@
 <div class="span9">
   <form {{action save on="submit"}} class="form-horizontal">
     <legend>Create Group</legend>
-      <div class="control-group">
+      <div {{bindAttr class=":control-group errors.name:error"}}>
         <label class="control-label" for="firstName">Group Name</label>
         <div class="controls">
           {{input value=name placeholder="Enter the name of your group" required="true" type='text'}}
+          {{#each errors.name}}<span class="help-inline">{{this}}</span>{{/each}}
         </div>
       </div>
       <hr>

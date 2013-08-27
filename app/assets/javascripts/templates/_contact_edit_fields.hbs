@@ -1,25 +1,29 @@
-<div class="control-group">
+<div {{bindAttr class=":control-group errors.firstName:error"}}>
   <label class="control-label" for="firstName">First name</label>
   <div class="controls">
     {{view Ember.TextField valueBinding="firstName" id="firstName" placeholder="First name" required="true"}}
+    {{#each errors.firstName}}<span class="help-inline">{{this}}</span>{{/each}}
   </div>
 </div>
-<div class="control-group">
+<div {{bindAttr class=":control-group errors.lastName:error"}}>
   <label class="control-label" for="lastName">Last name</label>
   <div class="controls">
     {{view Ember.TextField valueBinding="lastName" id="lastName" placeholder="Last name" required="true"}}
+    {{#each errors.lastName}}<span class="help-inline">{{this}}</span>{{/each}}
   </div>
 </div>
-<div class="control-group">
+<div {{bindAttr class=":control-group errors.email:error"}}>
   <label class="control-label" for="email">Email</label>
   <div class="controls">
     {{view Ember.TextField valueBinding="email" id="email" type="email" placeholder="Email address"}}
+    {{#each errors.email}}<span class="help-inline">{{this}}</span>{{/each}}
   </div>
 </div>
-<div class="control-group">
+<div {{bindAttr class=":control-group errors.notes:error"}}>
   <label class="control-label" for="notes">Notes</label>
   <div class="controls">
     {{view Ember.TextArea valueBinding="notes" id="notes" placeholder="Notes"}}
+    {{#each errors.notes}}<span class="help-inline">{{this}}</span>{{/each}}
   </div>
 </div>
 {{#unless controller.newGroup}}
