@@ -18,9 +18,11 @@ App.GroupsNewController = Ember.ObjectController.extend({
       var newGroup = controller.get('model');
       controller.get('controllers.groups').content.pushObject(newGroup);
       controller.transitionToRoute('group', newGroup);
-    }, function(exception){
-      // TODO add better error message
-      alert(exception);
+    }, function(models) {
+      var errors = models[0].errors;
+      if (errors.status !== 422) { // 422 (Unprocessable Entity) errors are handled by the form, see groups/new.hbs
+        alert("Error " + errors.status + ": " + errors.xhr.statusText);
+      }
     });
   },
 

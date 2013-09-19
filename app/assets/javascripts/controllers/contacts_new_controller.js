@@ -21,9 +21,11 @@ App.ContactsNewController = Em.ObjectController.extend({
       newContact = controller.get('content');
       controller.get('controllers.contacts').content.pushObject(newContact);
       controller.transitionToRoute("contact", newContact);
-    }, function(exception){
-      // TODO add better error message
-      alert(exception);
+    }, function(models) {
+      var errors = models[0].errors;
+      if (errors.status !== 422) { // 422 (Unprocessable Entity) errors are handled by the form, see _contact_edit_fields.hbs
+        alert("Error " + errors.status + ": " + errors.xhr.statusText);
+      }
     });
   },
 
